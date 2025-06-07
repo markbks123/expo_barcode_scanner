@@ -1,16 +1,16 @@
 import React from 'react';
-import { View, Text, StyleSheet,  Dimensions,  } from 'react-native';
-import { CameraView,} from 'expo-camera';
-import styles  from '../scanner/scanner.module';
+import { View, Text, StyleSheet } from 'react-native';
+import { CameraView } from 'expo-camera';
+import styles from '../scanner/scanner.module';
 import useScanner from './scanner.hooks';
-const Scanner = ({ navigation }: any) => {
 
-  const  {
+const Scanner = ({ navigation }: any) => {
+  const {
     hasPermission,
     scanned,
     facing,
     handleBarCodeScanned
-  } =useScanner({ navigation })
+  } = useScanner({ navigation });
 
   if (hasPermission === null) return <Text>Requesting camera permission...</Text>;
   if (hasPermission === false) return <Text>Unable to access the camera</Text>;
@@ -33,6 +33,5 @@ const Scanner = ({ navigation }: any) => {
     </View>
   );
 };
-
 
 export default Scanner;

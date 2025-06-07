@@ -13,13 +13,19 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.expobarcodescanner"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icons.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.anonymous.expobarcodescanner"
     },
     "web": {
       "favicon": "./assets/favicon.png"

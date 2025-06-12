@@ -4,13 +4,15 @@ import * as FileSystem from "expo-file-system";
 import * as Sharing from "expo-sharing";
 import * as ImagePicker from "expo-image-picker";
 const  useGenarater = () =>{
+
     const [text, setText] = useState("https://example.com");
     const [qrColor, setQrColor] = useState("#000000");
     const [bgColor, setBgColor] = useState("#ffffff");
     const [logoUri, setLogoUri] = useState<string | null>(null);
     const [scrollEnabled, setScrollEnabled] = useState<boolean>(true);
     const qrRef = useRef<QRCodeType | null>(null);
-
+    const QR_SIZE = 230;
+    const LOGO_SIZE = QR_SIZE * 0.15;
     
 
     const handlePickLogo = async () => {
@@ -49,6 +51,8 @@ const  useGenarater = () =>{
         qrRef,
         bgColor,
         scrollEnabled,
+        QR_SIZE,
+        LOGO_SIZE,
         setLogoUri,
         setQrColor,
         setText,

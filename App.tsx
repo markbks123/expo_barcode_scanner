@@ -1,16 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
+
 import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import Scanner from './component/scanner';
+import { NavigationContainer } from '@react-navigation/native';;
 import MyTabs from './share/myTap';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScanResult from './component/scanerResult';
-
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    <SafeAreaProvider>
     <NavigationContainer >
        <Stack.Navigator initialRouteName="Tabs">
         <Stack.Screen 
@@ -25,6 +25,7 @@ export default function App() {
         />
         </Stack.Navigator>
       </NavigationContainer>
+      </SafeAreaProvider>
       
   
    

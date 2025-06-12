@@ -26,6 +26,8 @@ const Generator = () => {
     qrRef,
     bgColor,
     scrollEnabled,
+    QR_SIZE,
+    LOGO_SIZE,
     handleShare,
     handlePickLogo,
     setQrColor,
@@ -59,7 +61,7 @@ const Generator = () => {
             <View style={[styles.qrBox, { backgroundColor: bgColor }]}>
               <QRCode
                 value={text || " "}
-                size={230}
+                size={QR_SIZE}
                 getRef={(c) => (qrRef.current = c)}
                 {...(logoUri
                   ? {
@@ -71,6 +73,8 @@ const Generator = () => {
                   : {})}
                 color={qrColor}
                 backgroundColor={bgColor}
+                logoBackgroundColor="transparent"
+                ecl="H"
               />
             </View>
 
